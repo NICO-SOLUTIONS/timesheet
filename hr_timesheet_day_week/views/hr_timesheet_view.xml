@@ -34,8 +34,11 @@
         <field name="model">account.analytic.line</field>
         <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
         <field name="arch" type="xml">
-            <xpath expr="//list" position="attributes">
+            <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-warning">day_week in ['5', '6']</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date']" position="after">
+                <field name="day_week" column_invisible="1" />
             </xpath>
         </field>
     </record>
